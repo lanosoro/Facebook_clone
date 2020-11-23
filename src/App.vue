@@ -4,10 +4,14 @@
     
 
     <v-main>
-      <Appweb/>
-      <HelloWorld/>
       
+     <!--  <Dashboard/> -->
+      <loginweb/>
+      <logintab/>
+
+      <signup/>
       
+     
         
     </v-main>
     
@@ -17,21 +21,26 @@
 </template>
 
 <script>
-import HelloWorld from './components/Appmobile';
-import Appweb from './components/Appweb'
-
-export default {
+/* 
+import Dashboard from './components/pages/Dashboard.vue'; */
+/* import loginweb from './components/Appweb';
+ */import Signup from './components/pages/signup';
+/* import logintab from './components/Apptab'
+ */export default {
   name: 'App',
 
   components: {
-    HelloWorld,
-    Appweb
-  
-  
+
+   
+   /*  Dashboard, */
+    /* loginweb */
+    /* logintab */
+    Signup  
   },
 
 
-  data: () => ({
+  
+    Dashboardata: () => ({
     //
   }),
 };

@@ -1,24 +1,35 @@
 <template>
- <v-container class="hidden-sm-and-down fill-height " fluid ma-0 pa-0 style="background-color:#f0f2f5;" >     
-    <v-row style="padding-bottom:112px position:absolute; background-color:#f0f2f5; min-height: 900px;
+    <div class="" v-show="$vuetify.breakpoint.sm" style="">
+        <div style="height:900px; background-color:#f0f2f5;" >
+             <v-row style="padding-bottom:112px position:absolute; background-color:#f0f2f5; min-height: 800px;
    margin-bottom: 100px;
    clear: both;">
-      <v-col cols="12" md="4">
-        <div class="facb" style="position: absolute;
-    top: 20%;
-    left: 20%;
+      <v-col cols="12" md="6" lg="6" xl="6" sm="6" >
+          <div class="facb" style="position: absolute;
+    top: 70px;
+    left: 41%;
     margin-top: -50px;
     margin-left: -50px;">
-            <h1 style="color:#1877f2; font-size:54px;">facebook</h1>
-             <p style="display:inline; font-size:27px;"> Facebook helps you connect and share <br> with the people in your life.</p>
+            <h1 style="color:#1877f2; font-size:54px; left:30px;">facebook</h1>
+             
+        </div>
+        <div class="facb" style="position: absolute;
+    top: 15%;
+    left: 33%;
+    margin-top: -50px;
+    margin-left: -50px;">
+            
+             <p style="display:inline; font-size:24px; text-align: center;"> Facebook helps you connect and<br> share  with the people in your life.</p>
         </div>
 
          <v-card elevation="8" width="396px" height="390.35px"  class="mx-auto mt-10% mb" style="position: absolute;
-    top: 20%;
-    right: 20%;
+    top: 25%;
+    left: 25%;
     margin-top: -50px;
     margin-left: -50px;
-    border-radius:10px;" >
+    border-radius:10px;
+    box-sizing: border-box;" id="form
+    " >
       <v-card-text>
         <v-form>
           <v-text-field  single-line
@@ -61,7 +72,7 @@ line-height: 48px;" >
               transform: translate(-50%, -50%); 
               
               ">
-              <a style="color:black; font-family:SFProText-Semibold, Helvetica, Arial, sans-serif;" color="black"><strong>Create a page</strong></a> for a celebrity, band or business.
+              <a style="color:black important; font-family:SFProText-Semibold, Helvetica, Arial, sans-serif;"><strong></strong></a> for a celebrity, band or business.
 
         </p>
       </v-card-text>
@@ -70,21 +81,15 @@ line-height: 48px;" >
     
 
       </v-col>
-      </v-row>    
-     <v-row style="text-align:left;">  
-    <v-col>
-        <v-footer style="bottom:0; position:absolute; background-color:white; width:100%; " class="justify-center">
-      
-        <v-card flat tile class="white lighten-1 #ccd0d5--text text-center pt-0" >
-          <v-card-text>
-            <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-text>
+      </v-row>        
+             </div>
+            
+         <div style="background-color:white; top:900px; height:264px;" >
+                <v-footer style="background-color:white;" >
+                   <v-card flat tile class="white lighten-1 #737373--text text-center pt-0" >
+          
        
-      <v-card-text class="#ccd0d5--text pt-0 " style="width:100%; ; " >
+      <v-card-text class="#737373--text pt-0 " style="width:100%; ; " >
         <ul id="horizontalist" class="justify-start ma-0" style="list-style-type:none; text-align:center; font-size:12px; ">
         <li><a href="">English</a>  </li> <li><a href="">kiswahili</a> </li> <li><a href=""></a> </li> <li><a href="#">Español
                       </a> </li> <li><a href="">Português (Brasil)
@@ -146,54 +151,39 @@ line-height: 48px;" >
            </ul>   </p>
   
       
-      <div class="text-xs-left" >
-         <v-card-text class="#737373--text pl-0" style="padding: 30px 0px; font-size:12px; left:0; color:#737373;" >
+  
+      <v-card-text class="#737373--text " style="padding: 50px 20px; font-size:12px; left:0;">
        Facebook © {{ new Date().getFullYear() }}
       </v-card-text>
-      </div>
-     
     </v-card>
   
   
+                </v-footer>
+          </div>
+
+    </div>
   
-  </v-footer>
-       </v-col>
-     </v-row>
-     <div id="example">{{ message }}</div>
-   
-
-  </v-container>
-
 </template>
 
 <script>
-
 export default {
-    name: 'loginweb',
+  
+  name: "logintab",
 
-    data: () => ({
-      
-     
-    
-    }),
-  }
+  data: () => ({})
+};
+
+
 
 </script>
-<script>
-export default {
- 
-}
-</script>
 
-<style  scoped>
- 
-
+<style scoped>
 li{
   float: left;
   line-height: 30px;
   padding: 0px 10px;
   word-wrap: normal;
-  list-style-type:none;
+  color: #737373;
 
 }
 li a{
@@ -211,12 +201,19 @@ ul{
 ul.b{
   line-height: 200%;
   text-align: justify;
+  color: #737373;
 }
 a{
   text-decoration: none;
+  color: #737373 !important;
 }
 a:hover{
   text-decoration: underline;
+}
+@media (max-width: 600px) { 
+  #form {
+    left:60%;
+  }
 }
 
 </style>

@@ -139,5 +139,77 @@
   
   
   </footer>
+.divider > span::before
+{
+left: 100%;
+margin-left: 15px;
+background: #ccd0d5;
+content: '';
+height: 1px;
+position: absolute;
+top: 50%;
 
+}
+.divider{
+text-align: center;
+white-space: nowrap;
+}
+.divider > span::after
+{
+left: 100%;
+margin-left: 15px;
+background: #ccd0d5;
+content: '';
+height: 1px;
+position: absolute;
+top: 50%;
+
+}
+
+
+
+<v-card class="pa-2" elevation="0" style="background-color:white; top:70%; right:20px; position:absolute; ">
+  <v-card-text class="#576b95--text pt-0">
+    <ul style="list-style-type:none; text-align:center; font-size:12px; ">
+      <li><a style="color:#576b95;">kiswahili</a></li>
+      <li><a style="color:#576b95;">english</a></li>
+      <li><a style="color:#576b95; font-weight:1px;">spain</a></li>
+      <a href="">
+        <v-icon depressed elevation="2" outlined medium tile
+          style="background-color:#fff; border-style: solid;  border-width: 1px; border-radius:3px;  border-color: #576b95;">
+          mdi-plus
+        </v-icon>
+      </a>
+
+    </ul>
+
+  </v-card-text>
+
+  <v-card-text class="#576b95--text pt-0 d-inline" align="center" style="right:50%; position:absolute">
+    <p style=" 
+              min-width:360px;
+              display:inline;
+              color:grey;
+              margin: 0;
+              position: absolute;
+              top: 110%;
+              left: 1%;
+              transform: translate(-50%, -50%); 
+              
+              ">
+      <a style="color:grey; font-size:12px;">About ·</a> <a style="color:grey; font-size:12px;">Help ·</a> <a
+        style="color:grey; font-size:12px;">More</a> <br> facebook inc
+
+    </p>
+
+
+  </v-card-text>
+  <v-card-text class="grey--text pt-0" style="font-size:12px; color:#576b95 !important;">
+    <ul style="list-style-type:none; text-align:center;">
+      <li><a style="color:#576b95;">kiswahili</a></li>
+      <li><a style="color:#576b95;">english</a></li>
+      <li><a style="color:#576b95; font-weight:1px;">spain</a></li>
+  
+    </ul>
+  </v-card-text>
 -->
