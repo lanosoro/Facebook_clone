@@ -76,14 +76,14 @@ line-height: 48px;" >
         <v-footer style="bottom:0; position:absolute; background-color:white; width:100%; " class="justify-center">
       
         <v-card flat tile class="white lighten-1 #ccd0d5--text text-center pt-0" >
-          <v-card-text>
+          <!-- <v-card-text>
             <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
             <v-icon size="24px">
               {{ icon }}
             </v-icon>
           </v-btn>
         </v-card-text>
-       
+        -->
       <v-card-text class="#ccd0d5--text pt-0 " style="width:100%; ; " >
         <ul id="horizontalist" class="justify-start ma-0" style="list-style-type:none; text-align:center; font-size:12px; ">
         <li><a href="">English</a>  </li> <li><a href="">kiswahili</a> </li> <li><a href=""></a> </li> <li><a href="#">Español
