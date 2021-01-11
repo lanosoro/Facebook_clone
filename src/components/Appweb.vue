@@ -1,6 +1,6 @@
 <template>
- <v-container class="hidden-sm-and-down fill-height " fluid ma-0 pa-0 style="background-color:#f0f2f5;" >     
-    <v-row style="padding-bottom:112px position:absolute; background-color:#f0f2f5; min-height: 900px;
+ <v-container v-if="!['/dashboard'].includes($route.path)" class="hidden-sm-and-down fill-height " fluid ma-0 pa-0 style="background-color:#f0f2f5;" >     
+    <v-row style="padding-bottom:112px position:absolute; background-color:#f0f2f5; min-height: 200px;
    margin-bottom: 100px;
    clear: both;">
       <v-col cols="12" md="4">
@@ -20,14 +20,14 @@
     margin-left: -50px;
     border-radius:10px;" >
       <v-card-text>
-        <v-form>
+        <v-form @submit.prevent="pressed">
           <v-text-field  single-line
-            outlined label="Email adress or Phone number" />
+            outlined label="Email adress or Phone number" v-model="email" />
           <v-text-field single-line
-            outlined label="Password" type="password"  />
-          <v-btn primary large block  style="background-color:#1877f2; color:#fff; text-transform: capitalize; font-size: 20px;
+            outlined label="Password" type="password" v-model="password" />
+          <v-btn primary large block type="submit" style="background-color:#1877f2; color:#fff; text-transform: capitalize; font-size: 20px;
 line-height: 48px;" >
-           <strong>log in</strong> 
+           log in 
           </v-btn>
           <v-spacer ></v-spacer>
           <v-spacer></v-spacer>
@@ -37,7 +37,7 @@ line-height: 48px;" >
     padding:4%; text-decoration:none;"><a href="#">forgotten password?</a></span>
     <v-divider></v-divider>
         
-          <v-btn  primary large  style="background-color:#31b816; 
+          <v-btn  primary large style="background-color:#31b816; 
               color:#fff;
               margin: 0;
               position: absolute;
@@ -50,7 +50,7 @@ line-height: 48px;" >
           </v-btn>
 
         </v-form>
-        <p  style=" 
+        <span  style=" 
               min-width:360px;
               display:inline;
               color:#000;
@@ -63,7 +63,7 @@ line-height: 48px;" >
               ">
               <a style="color:black; font-family:SFProText-Semibold, Helvetica, Arial, sans-serif;" color="black"><strong>Create a page</strong></a> for a celebrity, band or business.
 
-        </p>
+        </span>
       </v-card-text>
       
     </v-card>
@@ -159,7 +159,8 @@ line-height: 48px;" >
   </v-footer>
        </v-col>
      </v-row>
-     <div id="example">{{ message }}</div>
+    <logintab class="hidden-md-only"/>
+
    
 
   </v-container>
@@ -167,23 +168,32 @@ line-height: 48px;" >
 </template>
 
 <script>
-
+/* import logintab from './components/Apptab'; */
+import firebase from 'firebase/app'
+require('firebase/auth')
 export default {
     name: 'loginweb',
+    components:{
+      /* logintab */
+    },
 
-    data: () => ({
-      
-     
-    
-    }),
+    data (){
+      return{
+        email:'',
+        password:''
+      }
+    },
+    methods:{
+      pressed(){
+        firebase.auth().signInWithEmailAndPassword(this.email,this.password).then(()=>{
+          this.$router.replace({path:"/dashboard"})
+        })
+      }
+    }
   }
 
 </script>
-<script>
-export default {
- 
-}
-</script>
+
 
 <style  scoped>
  

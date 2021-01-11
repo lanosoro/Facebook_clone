@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="error" v-if="error">{{error.message}}</div>
-    <form v-on:submit.prevent="pressed">
+    <form @submit.prevent="pressed">
       Register
       <div class="email">
         <input type="email" v-model="email" placeholder="email" />
@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import * as firebase from "firebase/firebase-app";
-require ("firebase/firebase-auth");
+
 export default {
     name:"Signup",
   data() {
@@ -28,17 +27,15 @@ export default {
   },
   methods: {
     pressed() {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-          console.log("here");
-          this.$router.replace({ name: "secret" });
-        })
-        .catch(error => (this.error = error));
+      
+      
+          console.log({email:this.email, password:this.password});
+         
+        }
+       
     }
   }
-};
+
 </script>
 
 <style lang="scss" scoped>

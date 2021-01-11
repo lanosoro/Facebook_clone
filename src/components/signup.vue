@@ -3,7 +3,7 @@
      <div class="modal">
       <div class="modal-signup">
       
-        <div class="modal-close">
+        <div class="modal-close"> 
         X
         </div>
       <div class="modal-signup-heading">
@@ -90,8 +90,9 @@
 
 
 <script>
-import * as firebase from "firebase/firebase-app";
+import "firebase/firestore";
 import "firebase/auth";
+import {firebase} from '@firebase/app'
 export default {
   data() {
     return {
@@ -106,13 +107,21 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          console.log("here");
-          this.$router.replace({ name: "dashboard" });
+          console.log("firebase");
+          this.$router.replace({path:"/Dashboard"})
         })
         .catch(error => (this.error = error));
     }
   }
 };
+/* firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
+    var user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+
+       this.$router.replace({path:"Dashboard"})
+      }
+ */
 </script>
 
 <style scoped>

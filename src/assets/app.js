@@ -1,8 +1,8 @@
 import axios from "axios";
-import * as firebase from "firebase/app"
+import firebase from "firebase/app"
 import "firebase/firebase-auth"
 new Vue({
-    el: '#appp',
+    el: '#app',
     data: {
         email: '',
         firstname:''
@@ -14,6 +14,6 @@ new Vue({
                     // do something with res
                 })
                 .catch(err => {// catch error});
-                }
-   }
+                },
+   },
     })

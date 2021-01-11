@@ -3,17 +3,17 @@
   <v-app >
     
 
-    <v-main>
+   
       
-     <!--  <Dashboard/> -->
-      <loginweb/>
-      <logintab/>
-
-      <signup/>
+      <router-view><Dashboard/></router-view>
+      <router-view><loginweb/></router-view> 
+      <router-view><logintab/></router-view> 
+      <router-view><signup/></router-view>
+      
       
      
         
-    </v-main>
+    
     
 
    
@@ -21,20 +21,20 @@
 </template>
 
 <script>
-/* 
-import Dashboard from './components/pages/Dashboard.vue'; */
-/* import loginweb from './components/Appweb';
- */import Signup from './components/pages/signup';
-/* import logintab from './components/Apptab'
- */export default {
+
+import Dashboard from './components/pages/Dashboard.vue'; 
+import loginweb from './components/Appweb'; 
+import Signup from './components/signup';
+import logintab from './components/Apptab';
+export default {
   name: 'App',
 
   components: {
 
    
-   /*  Dashboard, */
-    /* loginweb */
-    /* logintab */
+    Dashboard,
+    loginweb,
+    logintab,
     Signup  
   },
 

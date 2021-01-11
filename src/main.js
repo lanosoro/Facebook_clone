@@ -5,6 +5,7 @@ import vuetify from './plugins/vuetify';
 import vueRouter from 'vue-router';
 import loginweb from './components/Appweb.vue';
 import dashboard from './components/pages/Dashboard.vue';
+import signup from './components/signup'
 import axios from 'axios';
 import firebase from 'firebase/app';
 
@@ -15,10 +16,13 @@ Vue.config.productionTip = false
 Vue.use(vueRouter);
 
 const routes = [
-  { path: 'login', component: loginweb },
-  { path: 'dashboard', component: dashboard },
+  { path: '/login', component: loginweb },
+  { path: '/dashboard', component: dashboard },
+  { path: '/signup', component: signup }
 ];
 const router = new vueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 
@@ -33,14 +37,13 @@ new Vue({
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDVnxbcFaPlWVBZDXJso4Eztc6-H-qufaU",
-  authDomain: "facebook-clone-965f5.firebaseapp.com",
-  databaseURL: "https://facebook-clone-965f5.firebaseio.com",
-  projectId: "facebook-clone-965f5",
-  storageBucket: "facebook-clone-965f5.appspot.com",
-  messagingSenderId: "717961643647",
-  appId: "1:717961643647:web:2dc8cbfe97bf5dfaaea14a",
-  measurementId: "G-ZMN4N32D8G"
+  apiKey: "AIzaSyDScbkc8AvZPH4Rwl6I05tvqKHIcHZpsuY",
+  authDomain: "facebook-15fe4.firebaseapp.com",
+  projectId: "facebook-15fe4",
+  storageBucket: "facebook-15fe4.appspot.com",
+  messagingSenderId: "1095577396754",
+  appId: "1:1095577396754:web:0bb0343b941a88cebbdacb",
+  measurementId: "G-E1M13Y3JTE"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
