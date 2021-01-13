@@ -16,7 +16,7 @@ Vue.config.productionTip = false
 Vue.use(vueRouter);
 
 const routes = [
-  { path: '/login', component: loginweb },
+  { path: '/', component: loginweb },
   { path: '/dashboard', component: dashboard },
   { path: '/signup', component: signup }
 ];
@@ -47,5 +47,5 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+
 

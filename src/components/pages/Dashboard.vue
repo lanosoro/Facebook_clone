@@ -59,7 +59,7 @@
       </v-img>
          </v-avatar>
        
-          <p class="mt-4 pa-3" style="color:black;">Jon Dow</p>
+          <p class="mt-4 pa-3" style="color:black;">{{user.name_surname}}</p>
 
         
         
@@ -150,8 +150,8 @@
     ></v-img>
               
             </v-avatar>
-           <v-flex> <h5  style="color:black" class="pl-12 pt-0 mt-8 ">Jon Dow</h5>
-           <v-icon class="pl-16 pt-n3 ml-16 mt-2" color="blue lighten-2">
+           <v-flex> <h4  style="color:black font-size:16;" class="pl-6 pt-0 mt-8 " >{{user.name_surname}}</h4>
+           <v-icon class="pl-8  ml-14 mt-n12" color="blue lighten-2">
               mdi-check-circle
             </v-icon></v-flex>
             
@@ -174,7 +174,14 @@
           :key="link"
         >
           {{ link }}
+          
         </v-tab>
+        <button 
+        type="submit" 
+        class="btn btn-dark btn-lg btn-block"
+        @click="logOut()">
+            Log out
+        </button>
         
       </v-layout>
 
@@ -466,6 +473,7 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
   export default {
     name:'dashoard',
     data: () => ({
@@ -476,7 +484,32 @@
         'Instagram',
         'More'
       ],
+      
+        user:{
+          name_surname:"ian osoro"
+        }
+      
     }),
+    created(){
+      firebase.auth().onAuthStateChanged.then((user)=>
+      {
+         if(user){
+           this.user=user;
+         }
+         else{
+           this.user=null;
+         }
+      })
+    },
+    methods: {
+    logOut() {
+      firebase.auth().signOut().then(() => {
+        firebase.auth().onAuthStateChanged(() => {
+          this.$router.push('/')
+        })
+      })
+    }
+    }
   }
 </script>
 <style  scoped>
