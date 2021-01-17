@@ -4,7 +4,7 @@
       app
       color="white"
       flat
-      elevation="5"
+      elevation=""
     >
 
       <v-avatar style="position:absolute; margin-right:150px;"
@@ -29,7 +29,8 @@
        <v-spacer></v-spacer>
        <v-spacer></v-spacer>
        <v-spacer></v-spacer>
-      <v-icon color="grey lighten-1" size="30">
+       <v-spacer></v-spacer>
+      <v-icon color="grey lighten-1" size="30" class="ml-16">
         mdi-home-outline
       </v-icon>
       <v-icon  color="grey lighten-1" size="30" class="ml-16">
@@ -45,7 +46,7 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
-     
+     <v-spacer></v-spacer>
         <v-avatar
         class="hidden-sm-and-down  ml-42"
         color="grey lighten-1 shrink"
@@ -59,7 +60,7 @@
       </v-img>
          </v-avatar>
        
-          <p class="mt-4 pa-3" style="color:black;">{{user.name_surname}}</p>
+          <p class="mt-4 pa-3" style="color:black;" >{{user.name_surname}}</p>
 
         
         
@@ -134,7 +135,7 @@
               <v-img
       :aspect-ratio="16/7"
       :width="width"
-      src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+      :src="avatar"
     ></v-img>
      <v-layout row>
         <v-avatar
@@ -272,12 +273,13 @@
               class="ml-2 rounded-tl-lg"
               min-height="80"
               color="#3b5998">
-
+i
               </v-sheet>
               <v-sheet
               class="ml-2 mt-1 rounded-bl-lg"
               min-height="80"
               color="#3b5998">
+              <img :src="avatar" :width="width" :height="80" alt="">
 
               </v-sheet>
               
@@ -350,7 +352,9 @@
         
       ></v-img>
       </v-avatar>
+      
            </v-layout>
+           <input @change="GetImage" type="file" name="image" id="">
               
             </v-sheet>
               <v-sheet
@@ -374,11 +378,12 @@
               </v-layout>
               <p style="color:black;" class="pa-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.voluptatem odit illum ipsa quia repellendus eum cum, vero vel iste eligendi!</p>
             <v-sheet class="" min-height="300" color="#3b5998"> 
+                
                 <v-img
                 :aspect-ratio="16/12"
                 :width="width"
                 :height="height"
-                src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+                :src="avatar">
 
             </v-img>
             </v-sheet>
@@ -420,6 +425,7 @@
                 <p style="color:grey;" class="mt-4 ml-2">share</p>
               </v-layout>
               <p style="color:grey;" class="ml-4">view comments</p>
+              
               <v-layout row>
                  <v-avatar
         class="hidden-sm-and-down  ml-4 "
@@ -477,6 +483,7 @@ import firebase from 'firebase/app'
   export default {
     name:'dashoard',
     data: () => ({
+      avatar:null,
       links: [
         'Home',
         'Photos',
@@ -502,6 +509,14 @@ import firebase from 'firebase/app'
       })
     },
     methods: {
+      GetImage(e){
+      let image = e.target.files[0]
+      let reader = new FileReader();
+      reader.readAsDataURL(image)
+      reader.onload = e =>{
+        this.avatar = e.target.result
+      }
+    },
     logOut() {
       firebase.auth().signOut().then(() => {
         firebase.auth().onAuthStateChanged(() => {
@@ -510,6 +525,7 @@ import firebase from 'firebase/app'
       })
     }
     }
+    
   }
 </script>
 <style  scoped>

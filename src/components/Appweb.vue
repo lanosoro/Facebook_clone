@@ -1,6 +1,6 @@
 <template>
  <v-container v-if="!['/dashboard'].includes($route.path)" class="hidden-sm-and-down fill-height " fluid ma-0 pa-0 style="background-color:#f0f2f5;" >     
-    <v-row style="padding-bottom:112px position:absolute; background-color:#f0f2f5; min-height: 200px;
+    <v-row style="padding-bottom:112px position:absolute; background-color:#f0f2f5; min-height: 500px;
    margin-bottom: 100px;
    clear: both;">
       <v-col cols="12" md="4">
