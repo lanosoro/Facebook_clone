@@ -33,6 +33,7 @@
             color="#000"
             placeholder="Search Facebook"
           > </v-text-field>
+          
         </v-responsive>
 
       
@@ -198,7 +199,12 @@
                 <div class="navcon"><a href="#">About</a></div>
                 <div class="navcon"><a href="#">Friends</a></div>
                 <div class="navcon"><a href="#">Photos</a></div>
-                
+                <div class="navcon" style="opacity: 1; visibility: visible;"><a href="#">more</a>
+                    <div class="dropdown-list">
+        <div class="dropdown-list__item"><a style="text-decoration" @click.prevent="logOut">logOut</a></div>
+      
+      </div>
+                </div>
                 <div class="navbtn" style="padding :3.5px; border-radius:5px; background:#f0f2f5; bottom:5px; right:120px; position:absolute; display:flex; text-decoration:none;">
                   
                   <a href="#" style="color:black; text-decoration:none;">
@@ -246,7 +252,7 @@
             sm="2"
           >
            <v-card
-              style="left:165.5%; top:-60px; height:100px; color:black;"
+              style="left:165.5%; top:10px; height:100px; color:black;"
               min-height="180"
               min-width="350"
               rounded="lg"
@@ -313,6 +319,27 @@
             
           >  </a>
                 </div>
+                
+            </v-card>
+                 <v-card
+              style="left:165.5%; top:20px; height:100px; color:black;"
+              min-height="180"
+              min-width="350"
+              rounded="lg"
+              class="mr-16"
+              color="white"
+              fluid
+            >
+              <span style="
+                  position:absolute;
+                  color:black;
+                  font-size:20px;
+                  top:0;
+                  margin-top:10px;
+                  left:0px;
+                  margin-left:13px;
+                  font-weight:600;">Photos</span>
+                
             </v-card>
           </v-col>
 
@@ -324,7 +351,7 @@
           <v-layout class="post-content">
            
              <v-card
-              style="left:65%; top:-60px; display:flex;"
+              style="left:65%; top:10px; display:flex;"
               min-height="80"
               min-width="420"
               rounded="lg"
@@ -576,6 +603,26 @@ a:hover{
 
 }
 .navcon >a{
+  color: inherit;
+  text-decoration: none;
+}
+ .navcon:hover{
+  background-color:#f0f2f5 ;
+  border-radius: 5px;
+  color:blue;
+}
+.navcon{
+  color: gray;
+  padding: 10px 20px;
+  position: relative;
+  text-align: left;
+  display: flex;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  transition:0.4;
+
+}
+.de >a{
   color: inherit;
   text-decoration: none;
 }
