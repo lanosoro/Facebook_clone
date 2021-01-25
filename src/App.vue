@@ -4,10 +4,11 @@
     
 
    
-      <v-main>
-         <router-view><Dashboard/></router-view>
-     <!-- <router-view><loginweb/></router-view>  -->
-      <!-- <router-view><logintab/></router-view> 
+      <v-main> <router-view><loginweb/></router-view>
+         <!-- <router-view><Dashboard/></router-view> -->
+         <!-- <router-view><userAccount/></router-view>
+      
+      <router-view><logintab/></router-view> 
       <router-view><signup/></router-view> -->
       </v-main>
       
@@ -24,8 +25,9 @@
 
 <script>
 
-import Dashboard from './components/pages/Dashboard.vue'; 
-// import loginweb from './components/Appweb'; 
+// import Dashboard from './components/pages/Dashboard.vue'; 
+// import userAccount from './components/pages/userAccount.vue';
+import loginweb from './components/Appweb'; 
 // import Signup from './components/signup';
 // import logintab from './components/Apptab';
 export default {
@@ -34,8 +36,9 @@ export default {
   components: {
 
    
-    Dashboard,
-    // loginweb,
+    // Dashboard,
+    // userAccount,
+    loginweb,
     // logintab,
     // Signup  
   },
