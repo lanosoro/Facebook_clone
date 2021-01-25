@@ -432,7 +432,7 @@
 
 <script>
 // import{commentRef} from 'firebase/app'
-import {commentRef} from 'firebase'
+// import {commentRef} from 'firebase'
 import 'firebase/storage'
 import firebase from 'firebase'
 import 'firebase/auth'
@@ -496,11 +496,11 @@ import 'firebase/auth'
       })
     },
     methods: {
-      submitComment:function(){
-        commentRef.push(this.comment)
-        this.comment=null
+      // submitComment:function(){
+      //   commentRef.push(this.comment)
+      //   this.comment=null
 
-      },
+      // },
       GetImage(e){
       let image = e.target.files[0]
       let reader = new FileReader();
